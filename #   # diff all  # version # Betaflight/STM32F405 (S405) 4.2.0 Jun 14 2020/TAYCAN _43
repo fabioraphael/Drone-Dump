@@ -1,0 +1,275 @@
+# 
+
+# diff all
+
+# version
+# Betaflight / STM32F405 (S405) 4.2.0 Jun 14 2020 / 03:04:22 (8f2d21460) MSP API: 1.43
+# config: manufacturer_id: DIAT, board_name: MAMBAF405US, version: cdb02aa1, date: 2020-05-24T03:18:53Z
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name MAMBAF405US
+manufacturer_id DIAT
+mcu_id 004a003a3252500a20383856
+signature 
+
+# name: TAYCAN _43
+
+# feature
+feature -SOFTSERIAL
+feature TELEMETRY
+feature LED_STRIP
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# serial
+serial 2 2048 115200 57600 0 115200
+
+# led
+led 0 0,0::AT:7
+led 1 1,0::AT:7
+led 2 2,0::AT:7
+led 3 3,0::AT:7
+led 4 4,0::AT:7
+led 5 5,0::AT:7
+led 6 6,0::AT:7
+led 7 7,0::AT:7
+led 8 8,0::AT:7
+led 9 9,0::AT:7
+led 10 10,0::AT:7
+led 11 11,0::AT:7
+led 12 12,0::AT:7
+led 13 13,0::AT:10
+led 14 14,0::AT:10
+
+# color
+color 1 0,0,0
+
+# mode_color
+mode_color 7 0 9
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 1 1 900 1300 0 0
+aux 2 2 1 1300 1700 0 0
+aux 3 13 2 1700 2100 0 0
+aux 4 35 3 1700 2100 0 0
+
+# adjrange
+adjrange 0 0 4 900 2100 29 4 0 0
+adjrange 1 0 6 900 2100 30 6 0 0
+
+# rxrange
+rxrange 0 988 2011
+rxrange 1 988 2011
+rxrange 2 988 2011
+rxrange 3 988 2011
+
+# vtxtable
+vtxtable bands 6
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A FACTORY 5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BOSCAM_B B FACTORY 5733 5752 5771 5790 5809 5828 5847 5866
+vtxtable band 3 BOSCAM_E E FACTORY 5705 5685 5665    0 5885 5905    0    0
+vtxtable band 4 FATSHARK F FACTORY 5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R FACTORY 5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable band 6 IMD6     I CUSTOM  5732 5765 5828 5840 5866 5740    0    0
+vtxtable powerlevels 4
+vtxtable powervalues 14 20 26 28
+vtxtable powerlabels 25 100 400 500
+
+# master
+set gyro_lowpass2_hz = 213
+set dyn_notch_width_percent = 0
+set dyn_notch_q = 250
+set dyn_notch_min_hz = 70
+set dyn_notch_max_hz = 350
+set dyn_lpf_gyro_min_hz = 170
+set dyn_lpf_gyro_max_hz = 425
+set acc_calibration = -41,-2,46,1
+set rc_smoothing_auto_smoothness = 20
+set serialrx_provider = CRSF
+set blackbox_p_ratio = 64
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set motor_poles = 12
+set vbat_max_cell_voltage = 435
+set ibata_scale = 183
+set beeper_dshot_beacon_tone = 5
+set small_angle = 180
+set pid_process_denom = 2
+set ledstrip_profile = RACE
+set ledstrip_race_color = BLACK
+set osd_warn_rssi = ON
+set osd_warn_link_quality = ON
+set osd_warn_over_cap = ON
+set osd_rssi_alarm = 30
+set osd_vbat_pos = 14744
+set osd_rssi_pos = 2106
+set osd_link_quality_pos = 14360
+set osd_tim_1_pos = 2400
+set osd_tim_2_pos = 6528
+set osd_flymode_pos = 2412
+set osd_anti_gravity_pos = 376
+set osd_throttle_pos = 2080
+set osd_vtx_channel_pos = 2048
+set osd_crosshairs_pos = 2253
+set osd_current_pos = 302
+set osd_mah_drawn_pos = 292
+set osd_craft_name_pos = 6538
+set osd_pidrate_profile_pos = 2112
+set osd_warnings_pos = 14633
+set osd_avg_cell_voltage_pos = 2424
+set osd_esc_tmp_pos = 24
+set osd_flip_arrow_pos = 14625
+set osd_stat_tim_1 = ON
+set osd_stat_max_spd = OFF
+set osd_stat_endbatt = ON
+set osd_stat_battery = ON
+set osd_stat_bbox = OFF
+set osd_stat_bb_no = OFF
+set osd_stat_max_g_force = ON
+set osd_stat_min_link_quality = ON
+set osd_stat_total_time = ON
+set osd_stat_min_rssi_dbm = ON
+set debug_mode = GYRO_SCALED
+set vtx_band = 5
+set vtx_channel = 6
+set vtx_power = 2
+set vtx_freq = 5843
+set vcd_video_system = NTSC
+set gyro_rpm_notch_harmonics = 1
+set gyro_rpm_notch_q = 800
+set name = TAYCAN _43
+
+profile 0
+
+# profile 0
+set dyn_lpf_dterm_min_hz = 60
+set dyn_lpf_dterm_max_hz = 145
+set dterm_lowpass2_hz = 128
+
+profile 1
+
+# profile 1
+set dyn_lpf_dterm_min_hz = 60
+set dyn_lpf_dterm_max_hz = 145
+set dterm_lowpass2_hz = 128
+set feedforward_transition = 100
+set iterm_relax_cutoff = 20
+set p_pitch = 90
+set i_pitch = 60
+set d_pitch = 43
+set f_pitch = 200
+set p_roll = 70
+set i_roll = 65
+set d_roll = 39
+set f_roll = 200
+set p_yaw = 100
+set i_yaw = 114
+set f_yaw = 200
+set d_min_roll = 0
+set d_min_pitch = 0
+set d_min_boost_gain = 27
+
+profile 2
+
+# profile 2
+set dyn_lpf_dterm_min_hz = 60
+set dyn_lpf_dterm_max_hz = 145
+set dyn_lpf_dterm_curve_expo = 7
+set dterm_lowpass2_hz = 128
+set feedforward_transition = 40
+set iterm_relax_cutoff = 10
+set yaw_lowpass_hz = 70
+set throttle_boost_cutoff = 10
+set p_pitch = 55
+set i_pitch = 80
+set d_pitch = 45
+set f_pitch = 200
+set p_roll = 65
+set i_roll = 80
+set d_roll = 45
+set f_roll = 200
+set p_yaw = 100
+set i_yaw = 80
+set f_yaw = 100
+set d_min_roll = 0
+set d_min_pitch = 0
+set ff_interpolate_sp = AVERAGED_3
+set ff_spike_limit = 55
+set ff_smooth_factor = 40
+set ff_boost = 0
+
+# restore original profile selection
+profile 1
+
+rateprofile 0
+
+# rateprofile 0
+set roll_rc_rate = 70
+set pitch_rc_rate = 70
+set yaw_rc_rate = 75
+set roll_srate = 60
+set pitch_srate = 55
+set yaw_srate = 60
+
+rateprofile 1
+
+# rateprofile 1
+set roll_rc_rate = 71
+set pitch_rc_rate = 71
+set yaw_rc_rate = 78
+set yaw_srate = 79
+
+rateprofile 2
+
+# rateprofile 2
+set roll_rc_rate = 80
+set pitch_rc_rate = 80
+set yaw_rc_rate = 95
+set roll_expo = 30
+set pitch_expo = 30
+set yaw_expo = 10
+set roll_srate = 80
+set pitch_srate = 83
+set yaw_srate = 86
+set tpa_rate = 15
+
+rateprofile 3
+
+# rateprofile 3
+set roll_rc_rate = 127
+set pitch_rc_rate = 127
+set yaw_rc_rate = 77
+set roll_expo = 40
+set pitch_expo = 40
+set yaw_expo = 10
+set roll_srate = 72
+set pitch_srate = 72
+set yaw_srate = 77
+
+rateprofile 4
+
+# rateprofile 4
+set roll_rc_rate = 80
+set pitch_rc_rate = 80
+set yaw_rc_rate = 80
+set roll_srate = 83
+set pitch_srate = 83
+set yaw_srate = 80
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 1
+
+# save configuration
+save
+# 
