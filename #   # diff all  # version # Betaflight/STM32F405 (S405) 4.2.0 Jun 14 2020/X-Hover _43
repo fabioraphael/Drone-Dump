@@ -1,7 +1,9 @@
-dump
+# 
+
+# dump
 
 # version
-# Betaflight / STM32F405 (S405) 4.2.1 Jul 19 2020 / 06:18:01 (caa0d683c) MSP API: 1.43
+# Betaflight / STM32F405 (S405) 4.2.8 Mar 19 2021 / 21:00:59 (norevision) MSP API: 1.43
 # config: manufacturer_id: AIRB, board_name: OMNIBUSF4SD, version: 3a35e73b, date: 2019-09-30T05:46:12Z
 
 # start the command batch
@@ -10,7 +12,7 @@ batch start
 board_name OMNIBUSF4SD
 manufacturer_id AIRB
 
-# name: X-Hover _43
+# name: X-Burger _43
 
 # resources
 resource BEEPER 1 B04
@@ -278,7 +280,6 @@ feature -ESC_SENSOR
 feature -ANTI_GRAVITY
 feature -DYNAMIC_FILTER
 feature RX_SERIAL
-feature TELEMETRY
 feature OSD
 feature AIRMODE
 feature ANTI_GRAVITY
@@ -448,7 +449,7 @@ aux 18 0 0 900 900 0 0
 aux 19 0 0 900 900 0 0
 
 # adjrange
-adjrange 0 0 0 900 900 0 0 0 0
+adjrange 0 0 4 900 2100 29 4 0 0
 adjrange 1 0 0 900 900 0 0 0 0
 adjrange 2 0 0 900 900 0 0 0 0
 adjrange 3 0 0 900 900 0 0 0 0
@@ -486,17 +487,11 @@ rxrange 2 988 2011
 rxrange 3 988 2011
 
 # vtxtable
-vtxtable bands 6
-vtxtable channels 8
-vtxtable band 1 BOSCAM_A A FACTORY 5865 5845 5825 5805 5785 5765 5745 5725
-vtxtable band 2 BOSCAM_B B FACTORY 5733 5752 5771 5790 5809 5828 5847 5866
-vtxtable band 3 BOSCAM_E E FACTORY 5705 5685 5665    0 5885 5905    0    0
-vtxtable band 4 FATSHARK F FACTORY 5740 5760 5780 5800 5820 5840 5860 5880
-vtxtable band 5 RACEBAND R FACTORY 5658 5695 5732 5769 5806 5843 5880 5917
-vtxtable band 6 IMD6     I CUSTOM  5732 5765 5828 5840 5866 5740    0    0
-vtxtable powerlevels 4
-vtxtable powervalues 13 23 27 29
-vtxtable powerlabels 25 200 500 800
+vtxtable bands 0
+vtxtable channels 0
+vtxtable powerlevels 0
+vtxtable powervalues
+vtxtable powerlabels
 
 # vtx
 vtx 0 0 0 0 0 900 900
@@ -535,7 +530,7 @@ set gyro_hardware_lpf = NORMAL
 set gyro_lowpass_type = PT1
 set gyro_lowpass_hz = 200
 set gyro_lowpass2_type = PT1
-set gyro_lowpass2_hz = 300
+set gyro_lowpass2_hz = 275
 set gyro_notch1_hz = 0
 set gyro_notch1_cutoff = 0
 set gyro_notch2_hz = 0
@@ -551,14 +546,14 @@ set dyn_notch_width_percent = 8
 set dyn_notch_q = 120
 set dyn_notch_min_hz = 150
 set dyn_notch_max_hz = 600
-set dyn_lpf_gyro_min_hz = 240
-set dyn_lpf_gyro_max_hz = 600
+set dyn_lpf_gyro_min_hz = 220
+set dyn_lpf_gyro_max_hz = 550
 set gyro_filter_debug_axis = ROLL
 set acc_hardware = AUTO
 set acc_lpf_hz = 10
-set acc_trim_pitch = 0
+set acc_trim_pitch = -6
 set acc_trim_roll = 0
-set acc_calibration = 5,30,-136,1
+set acc_calibration = -74,23,-169,1
 set align_mag = DEFAULT
 set mag_align_roll = 0
 set mag_align_pitch = 0
@@ -804,11 +799,13 @@ set osd_warn_core_temp = ON
 set osd_warn_rc_smoothing = ON
 set osd_warn_fail_safe = ON
 set osd_warn_launch_control = ON
-set osd_warn_no_gps_rescue = ON
-set osd_warn_gps_rescue_disabled = ON
-set osd_warn_rssi = OFF
-set osd_warn_link_quality = OFF
+set osd_warn_no_gps_rescue = OFF
+set osd_warn_gps_rescue_disabled = OFF
+set osd_warn_rssi = ON
+set osd_warn_link_quality = ON
+set osd_warn_rssi_dbm = OFF
 set osd_warn_over_cap = OFF
+set osd_warn_dji = ON
 set osd_rssi_alarm = 20
 set osd_link_quality_alarm = 80
 set osd_rssi_dbm_alarm = -60
@@ -822,29 +819,29 @@ set osd_core_temp_alarm = 70
 set osd_ah_max_pit = 20
 set osd_ah_max_rol = 40
 set osd_ah_invert = OFF
-set osd_logo_on_arming = ON
-set osd_logo_on_arming_duration = 43
+set osd_logo_on_arming = OFF
+set osd_logo_on_arming_duration = 5
 set osd_tim1 = 2560
 set osd_tim2 = 2561
-set osd_vbat_pos = 400
+set osd_vbat_pos = 436
 set osd_rssi_pos = 2522
-set osd_link_quality_pos = 14740
+set osd_link_quality_pos = 234
 set osd_rssi_dbm_pos = 234
-set osd_tim_1_pos = 352
-set osd_tim_2_pos = 384
+set osd_tim_1_pos = 234
+set osd_tim_2_pos = 234
 set osd_remaining_time_estimate_pos = 234
-set osd_flymode_pos = 363
+set osd_flymode_pos = 2546
 set osd_anti_gravity_pos = 234
 set osd_g_force_pos = 234
-set osd_throttle_pos = 0
-set osd_vtx_channel_pos = 32
+set osd_throttle_pos = 234
+set osd_vtx_channel_pos = 234
 set osd_crosshairs_pos = 205
 set osd_ah_sbar_pos = 206
 set osd_ah_pos = 78
 set osd_current_pos = 234
 set osd_mah_drawn_pos = 234
 set osd_motor_diag_pos = 234
-set osd_craft_name_pos = 393
+set osd_craft_name_pos = 2413
 set osd_display_name_pos = 234
 set osd_gps_speed_pos = 234
 set osd_gps_lon_pos = 234
@@ -861,12 +858,12 @@ set osd_pid_yaw_pos = 234
 set osd_debug_pos = 234
 set osd_power_pos = 234
 set osd_pidrate_profile_pos = 234
-set osd_warnings_pos = 14633
+set osd_warnings_pos = 2376
 set osd_avg_cell_voltage_pos = 2516
 set osd_pit_ang_pos = 234
 set osd_rol_ang_pos = 234
 set osd_battery_usage_pos = 234
-set osd_disarmed_pos = 234
+set osd_disarmed_pos = 2442
 set osd_nheading_pos = 234
 set osd_nvario_pos = 234
 set osd_esc_tmp_pos = 234
@@ -874,7 +871,7 @@ set osd_esc_rpm_pos = 234
 set osd_esc_rpm_freq_pos = 234
 set osd_rtc_date_time_pos = 234
 set osd_adjustment_range_pos = 234
-set osd_flip_arrow_pos = 2339
+set osd_flip_arrow_pos = 234
 set osd_core_temp_pos = 234
 set osd_log_status_pos = 234
 set osd_stick_overlay_left_pos = 234
@@ -927,15 +924,15 @@ set cpu_overclock = OFF
 set pwr_on_arm_grace = 5
 set scheduler_optimize_rate = AUTO
 set enable_stick_arming = OFF
-set vtx_band = 5
-set vtx_channel = 6
-set vtx_power = 3
+set vtx_band = 0
+set vtx_channel = 0
+set vtx_power = 0
 set vtx_low_power_disarm = OFF
-set vtx_freq = 5843
+set vtx_freq = 0
 set vtx_pit_mode_freq = 0
 set vtx_halfduplex = ON
 set vtx_spi_bus = 0
-set vcd_video_system = AUTO
+set vcd_video_system = PAL
 set vcd_h_offset = 0
 set vcd_v_offset = 0
 set max7456_clock = DEFAULT
@@ -943,7 +940,7 @@ set max7456_spi_bus = 3
 set max7456_preinit_opu = OFF
 set displayport_msp_col_adjust = 0
 set displayport_msp_row_adjust = 0
-set displayport_msp_serial = 0
+set displayport_msp_serial = -1
 set displayport_msp_attrs = 0,0,0,0
 set displayport_msp_use_device_blink = OFF
 set displayport_max7456_col_adjust = 0
@@ -1016,7 +1013,7 @@ set stats = OFF
 set stats_total_flights = 0
 set stats_total_time_s = 0
 set stats_total_dist_m = 0
-set name = X-Hover _43
+set name = X-Burger _43
 set display_name = -
 set position_alt_source = DEFAULT
 set box_user_1_name = -
@@ -1028,13 +1025,13 @@ profile 0
 
 # profile 0
 set profile_name = -
-set dyn_lpf_dterm_min_hz = 84
-set dyn_lpf_dterm_max_hz = 204
+set dyn_lpf_dterm_min_hz = 77
+set dyn_lpf_dterm_max_hz = 187
 set dyn_lpf_dterm_curve_expo = 5
 set dterm_lowpass_type = PT1
 set dterm_lowpass_hz = 150
 set dterm_lowpass2_type = PT1
-set dterm_lowpass2_hz = 180
+set dterm_lowpass2_hz = 165
 set dterm_notch_hz = 0
 set dterm_notch_cutoff = 0
 set vbat_pid_gain = OFF
