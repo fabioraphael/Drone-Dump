@@ -12,7 +12,7 @@ batch start
 board_name OMNIBUSF4SD
 manufacturer_id AIRB
 
-# name: X-Burger _43
+# name: -
 
 # resources
 resource BEEPER 1 B04
@@ -312,8 +312,8 @@ beeper CAM_CONNECTION_CLOSE
 beeper RC_SMOOTHING_INIT_FAIL
 
 # beacon
-beacon -RX_LOST
-beacon -RX_SET
+beacon RX_LOST
+beacon RX_SET
 
 # map
 map AETR1234
@@ -431,7 +431,7 @@ aux 0 0 0 1700 2100 0 0
 aux 1 1 1 900 1300 0 0
 aux 2 2 1 1300 1700 0 0
 aux 3 13 2 1700 2100 0 0
-aux 4 35 3 1700 2100 0 0
+aux 4 35 2 1700 2100 0 0
 aux 5 0 0 900 900 0 0
 aux 6 0 0 900 900 0 0
 aux 7 0 0 900 900 0 0
@@ -513,7 +513,7 @@ rxfail 3 a
 rxfail 4 h
 rxfail 5 h
 rxfail 6 h
-rxfail 7 h
+rxfail 7 s 1000
 rxfail 8 h
 rxfail 9 h
 rxfail 10 h
@@ -530,7 +530,7 @@ set gyro_hardware_lpf = NORMAL
 set gyro_lowpass_type = PT1
 set gyro_lowpass_hz = 200
 set gyro_lowpass2_type = PT1
-set gyro_lowpass2_hz = 275
+set gyro_lowpass2_hz = 325
 set gyro_notch1_hz = 0
 set gyro_notch1_cutoff = 0
 set gyro_notch2_hz = 0
@@ -542,18 +542,18 @@ set gyro_overflow_detect = ALL
 set yaw_spin_recovery = AUTO
 set yaw_spin_threshold = 1950
 set gyro_to_use = FIRST
-set dyn_notch_width_percent = 8
-set dyn_notch_q = 120
+set dyn_notch_width_percent = 0
+set dyn_notch_q = 250
 set dyn_notch_min_hz = 150
-set dyn_notch_max_hz = 600
-set dyn_lpf_gyro_min_hz = 220
-set dyn_lpf_gyro_max_hz = 550
+set dyn_notch_max_hz = 350
+set dyn_lpf_gyro_min_hz = 260
+set dyn_lpf_gyro_max_hz = 650
 set gyro_filter_debug_axis = ROLL
 set acc_hardware = AUTO
 set acc_lpf_hz = 10
-set acc_trim_pitch = -6
+set acc_trim_pitch = 0
 set acc_trim_roll = 0
-set acc_calibration = -74,23,-169,1
+set acc_calibration = -11,110,-156,1
 set align_mag = DEFAULT
 set mag_align_roll = 0
 set mag_align_pitch = 0
@@ -576,7 +576,7 @@ set baro_cf_vel = 985
 set mid_rc = 1500
 set min_check = 1050
 set max_check = 1900
-set rssi_channel = 0
+set rssi_channel = 8
 set rssi_src_frame_errors = OFF
 set rssi_scale = 100
 set rssi_offset = 0
@@ -623,7 +623,7 @@ set max_throttle = 2000
 set min_command = 1000
 set dshot_idle_value = 550
 set dshot_burst = ON
-set dshot_bidir = OFF
+set dshot_bidir = ON
 set dshot_bitbang = AUTO
 set dshot_bitbang_timer = AUTO
 set use_unsynced_pwm = OFF
@@ -802,11 +802,11 @@ set osd_warn_launch_control = ON
 set osd_warn_no_gps_rescue = OFF
 set osd_warn_gps_rescue_disabled = OFF
 set osd_warn_rssi = ON
-set osd_warn_link_quality = ON
+set osd_warn_link_quality = OFF
 set osd_warn_rssi_dbm = OFF
 set osd_warn_over_cap = OFF
 set osd_warn_dji = ON
-set osd_rssi_alarm = 20
+set osd_rssi_alarm = 40
 set osd_link_quality_alarm = 80
 set osd_rssi_dbm_alarm = -60
 set osd_cap_alarm = 2200
@@ -1000,7 +1000,7 @@ set i2c3_pullup = OFF
 set i2c3_overclock = ON
 set mco2_on_pc9 = OFF
 set timezone_offset_minutes = 0
-set gyro_rpm_notch_harmonics = 3
+set gyro_rpm_notch_harmonics = 2
 set gyro_rpm_notch_q = 500
 set gyro_rpm_notch_min = 100
 set dterm_rpm_notch_harmonics = 0
@@ -1013,7 +1013,7 @@ set stats = OFF
 set stats_total_flights = 0
 set stats_total_time_s = 0
 set stats_total_dist_m = 0
-set name = X-Burger _43
+set name = -
 set display_name = -
 set position_alt_source = DEFAULT
 set box_user_1_name = -
@@ -1021,17 +1021,17 @@ set box_user_2_name = -
 set box_user_3_name = -
 set box_user_4_name = -
 
-profile 0
+profile 1
 
-# profile 0
+# profile 1
 set profile_name = -
-set dyn_lpf_dterm_min_hz = 77
-set dyn_lpf_dterm_max_hz = 187
+set dyn_lpf_dterm_min_hz = 91
+set dyn_lpf_dterm_max_hz = 221
 set dyn_lpf_dterm_curve_expo = 5
 set dterm_lowpass_type = PT1
 set dterm_lowpass_hz = 150
 set dterm_lowpass2_type = PT1
-set dterm_lowpass2_hz = 165
+set dterm_lowpass2_hz = 195
 set dterm_notch_hz = 0
 set dterm_notch_cutoff = 0
 set vbat_pid_gain = OFF
@@ -1067,18 +1067,18 @@ set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_debug_axis = ROLL
 set acro_trainer_gain = 75
-set p_pitch = 46
+set p_pitch = 60
 set i_pitch = 90
 set d_pitch = 38
-set f_pitch = 95
-set p_roll = 42
+set f_pitch = 162
+set p_roll = 55
 set i_roll = 85
 set d_roll = 35
-set f_roll = 90
-set p_yaw = 45
+set f_roll = 153
+set p_yaw = 59
 set i_yaw = 90
 set d_yaw = 0
-set f_yaw = 90
+set f_yaw = 153
 set angle_level_strength = 50
 set horizon_level_strength = 50
 set horizon_transition = 75
@@ -1091,8 +1091,8 @@ set abs_control_error_limit = 20
 set abs_control_cutoff = 11
 set use_integrated_yaw = OFF
 set integrated_yaw_relax = 200
-set d_min_roll = 23
-set d_min_pitch = 25
+set d_min_roll = 0
+set d_min_pitch = 0
 set d_min_yaw = 0
 set d_min_boost_gain = 37
 set d_min_advance = 20
@@ -1121,18 +1121,18 @@ rateprofile 0
 set rateprofile_name = -
 set thr_mid = 50
 set thr_expo = 0
-set rates_type = BETAFLIGHT
-set roll_rc_rate = 100
-set pitch_rc_rate = 100
-set yaw_rc_rate = 100
-set roll_expo = 0
-set pitch_expo = 0
-set yaw_expo = 0
-set roll_srate = 70
-set pitch_srate = 70
-set yaw_srate = 70
+set rates_type = ACTUAL
+set roll_rc_rate = 1
+set pitch_rc_rate = 1
+set yaw_rc_rate = 1
+set roll_expo = 54
+set pitch_expo = 54
+set yaw_expo = 54
+set roll_srate = 74
+set pitch_srate = 74
+set yaw_srate = 54
 set tpa_rate = 65
-set tpa_breakpoint = 1350
+set tpa_breakpoint = 1750
 set tpa_mode = D
 set throttle_limit_type = OFF
 set throttle_limit_percent = 100
