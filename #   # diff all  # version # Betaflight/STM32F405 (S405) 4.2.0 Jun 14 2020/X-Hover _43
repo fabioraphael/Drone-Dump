@@ -1,6 +1,4 @@
-# 
-
-# dump
+dump
 
 # version
 # Betaflight / STM32F405 (S405) 4.2.8 Mar 19 2021 / 21:00:59 (norevision) MSP API: 1.43
@@ -553,7 +551,7 @@ set acc_hardware = AUTO
 set acc_lpf_hz = 10
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
-set acc_calibration = -11,110,-156,1
+set acc_calibration = 5,93,-157,1
 set align_mag = DEFAULT
 set mag_align_roll = 0
 set mag_align_pitch = 0
@@ -615,13 +613,13 @@ set adc_tempsensor_calibration30 = 0
 set adc_tempsensor_calibration110 = 0
 set input_filtering_mode = OFF
 set blackbox_p_ratio = 32
-set blackbox_device = SDCARD
+set blackbox_device = NONE
 set blackbox_record_acc = ON
 set blackbox_mode = NORMAL
 set min_throttle = 1070
 set max_throttle = 2000
 set min_command = 1000
-set dshot_idle_value = 550
+set dshot_idle_value = 430
 set dshot_burst = ON
 set dshot_bidir = ON
 set dshot_bitbang = AUTO
@@ -1000,7 +998,7 @@ set i2c3_pullup = OFF
 set i2c3_overclock = ON
 set mco2_on_pc9 = OFF
 set timezone_offset_minutes = 0
-set gyro_rpm_notch_harmonics = 2
+set gyro_rpm_notch_harmonics = 1
 set gyro_rpm_notch_q = 500
 set gyro_rpm_notch_min = 100
 set dterm_rpm_notch_harmonics = 0
@@ -1058,8 +1056,8 @@ set iterm_relax_type = SETPOINT
 set iterm_relax_cutoff = 15
 set iterm_windup = 100
 set iterm_limit = 400
-set pidsum_limit = 500
-set pidsum_limit_yaw = 400
+set pidsum_limit = 1000
+set pidsum_limit_yaw = 1000
 set yaw_lowpass_hz = 0
 set throttle_boost = 5
 set throttle_boost_cutoff = 15
